@@ -1,0 +1,12 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    background-color: blanchedalmond;
+}
+
+  
+  #title, #author, #pages, #addBook, .read {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
