@@ -4,7 +4,7 @@
 }
 
   
-  #title, #author, #pages, #addBook, .read {
+  button, label, .title, .author, .pages, .read {
     font-size: 20px;
     margin-bottom: 20px;
     border-radius: 5px;

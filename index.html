@@ -10,23 +10,21 @@
 <body>
    <div>
      <h1>Bookshelf</h1>
-
-     <div id='adNewBook'>
+     <button id='pop-up-form' name='pop-up-form'>Add New Book</button>
+     <div id='add-new-book'>
         <h2>Add New Book</h2>
-        <form id='addNewBookForm'>
-            <input type='text' id='title' name='title' placeholder='Title'>
-            <input type='text' id='author' name='author' placeholder='Author'>
-            <input type='text' id='pages' name='pages' placeholder='Pages'>
-            <p class='read'>Read?
-                <select class='read' name='read'>
-                 <option>Yes</option>
-                 <option>No</option>
-                </select>
-            </p>
-            <button type='submit' form='addNewBookForm' id='addBook' name='addBook'>Add</button>
+        <form id='new-book'>
+            <input type='text' class='title' name='title' placeholder='Title'>
+            <input type='text' class='author' name='author' placeholder='Author'>
+            <input type='text' class='pages' name='pages' placeholder='Pages'>
+            <p class='read'><label>Read:</label><input type='checkbox' class='read' name='read' value='yes'></p>
+            <button type='submit' form='new-book' id='add-book' name='add-book'>Add</button>
         </form>
      </div>
-      
+     
+     <div id='bookshelf-container'>
+         Bookshelf
+     </div>
    </div> 
 </body>
 </html>
