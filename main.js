@@ -35,24 +35,25 @@ addBookButton.addEventListener('click', addBook)
 
 //Button to open the pop-up form to add a new book
 
-const addNewBook = document.querySelector('#add-new-book');
-const popUpForm = document.querySelector('#pop-up-form');
-popUpForm.addEventListener('click', () => {
-    addNewBook.style.display = 'block';
+const modalBg = document.querySelector('.modal-bg');
+//const modal = document.querySelector('.modal');
+const modalButton = document.querySelector('.modal-button');
+modalButton.addEventListener('click', () => {
+    modalBg.classList.add('bg-active');
+    //modal.style.display = 'block';
 })
 
 //Creates books in the browser.
 
-const bookshelfContainer = document.querySelector('#bookshelf-container');
+const bookshelfContainer = document.querySelector('.bookshelf-container');
 
 function render() {
-
     const books = document.querySelectorAll('.book');
     books.forEach(book => bookshelfContainer.removeChild(book));
     for (let i = 0; i < bookshelf.length; i++){
         createBook(bookshelf[i]);
     }
-    addNewBook.style.display = 'none';
+    //modal.style.display = 'none';
 }
 
 

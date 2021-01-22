@@ -2,19 +2,20 @@
     box-sizing: border-box;
     background-color: blanchedalmond;
 }
+
   h1 {
     display: flex;
     justify-content: center;
   }
 
-  button, label, .title, .author, .pages, .read {
+  label, .add-book, .title, .author, .pages, .read {
     display: flex;
     font-size: 1.2em;
     margin-bottom: 20px;
     border-radius: 5px;
   }
   
-  #bookshelf-container {
+  .bookshelf-container {
     margin-top: 4em;
     margin-left: 1em;
     display: flex;
@@ -33,8 +34,41 @@
     border-radius: 5px;
   }
 
-  .newButtonContainer {
-    margin-top: 4em;
+  .modal-button {
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+  }
+
+  .modal-bg {
+    position:fixed;
+    width: 100%;
+    height: 100vh;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.5);
     display: flex;
-    justify-content: center;
+    align-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+
+  }
+
+  .bg-active {
+    visibility:visible;
+    opacity: 1;
+  }
+
+  .modal {
+    height: 30%;
+    width: 30%;
+    min-width: 16em;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: space-around;
   }
