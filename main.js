@@ -36,12 +36,18 @@ addBookButton.addEventListener('click', addBook)
 //Button to open the pop-up form to add a new book
 
 const modalBg = document.querySelector('.modal-bg');
-//const modal = document.querySelector('.modal');
 const modalButton = document.querySelector('.modal-button');
 modalButton.addEventListener('click', () => {
     modalBg.classList.add('bg-active');
-    //modal.style.display = 'block';
 })
+
+// X button to close the modal without adding a book
+
+const modalClose = document.querySelector('.modal-close');
+modalClose.addEventListener('click', () => {
+    modalBg.classList.remove('bg-active');
+})
+
 
 //Creates books in the browser.
 
@@ -53,7 +59,7 @@ function render() {
     for (let i = 0; i < bookshelf.length; i++){
         createBook(bookshelf[i]);
     }
-    //modal.style.display = 'none';
+    modalBg.classList.remove('bg-active');
 }
 
 
@@ -66,6 +72,7 @@ function createBook(book) {
     const authorDiv = document.createElement('div');
     const pagesDiv = document.createElement('div');
     const readButton = document.createElement('button');
+    const deleteBook = document.createElement('button');
 
     bookDiv.classList.add('book');
     bookDiv.setAttribute('id', bookshelf.indexOf(book));
@@ -90,11 +97,28 @@ function createBook(book) {
     }
     bookDiv.appendChild(readButton);
 
+    // Delete a book from bookshelf
+
+    deleteBook.classList.add('delete');
+    deleteBook.innerText = 'Delete Book';
+    bookDiv.appendChild(deleteBook);
+    deleteBook.addEventListener('click', () => {
+        bookshelf.splice(bookshelf.indexOf(book), 1);
+        render();
+    })
 
     bookshelfContainer.appendChild(bookDiv);
 
+    // Togle read / not read button
 
+    readButton.addEventListener('click', () => {
+        book.read = !book.read;
+        render();
+    })
 
+   
 }
+
+
 
 render();
