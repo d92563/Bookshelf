@@ -7,7 +7,6 @@ let bookshelf = [
     }
 ];
 
-
 class Book {
     constructor(title, author, pages, read) {
         this.title = form.title.value;
@@ -17,9 +16,7 @@ class Book {
     }
 };
 
-
 function addBook(title, author, pages, read) {
-    event.preventDefault();
 
     let bookToAdd = new Book(title, author, pages, read);
     bookshelf.push(bookToAdd);
@@ -79,7 +76,7 @@ function createBook(book) {
 
     titleDiv.classList.add('title');
     titleDiv.innerText = `Title: ${book.title}`;
-    bookDiv.appendChild(titleDiv);
+    bookDiv.append(titleDiv);
 
     authorDiv.classList.add('author');
     authorDiv.innerText = `Author: ${book.author}`;
@@ -87,7 +84,7 @@ function createBook(book) {
 
     pagesDiv.classList.add('pages');
     pagesDiv.innerText = `Pages: ${book.pages}`;
-    bookDiv.appendChild(pagesDiv);
+    bookDiv.append(pagesDiv);
 
     readButton.classList.add('read');
     if (book.read === true) {
@@ -95,12 +92,12 @@ function createBook(book) {
     } else {
         readButton.innerText = 'Not Read';
     }
-    bookDiv.appendChild(readButton);
+    bookDiv.append(readButton);
 
     // Delete a book from bookshelf
 
     deleteBook.classList.add('delete');
-    deleteBook.innerText = 'Delete Book';
+    deleteBook.innerText = 'Delete';
     bookDiv.appendChild(deleteBook);
     deleteBook.addEventListener('click', () => {
         bookshelf.splice(bookshelf.indexOf(book), 1);
