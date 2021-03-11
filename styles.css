@@ -72,7 +72,9 @@
   }
 
   .modal {
-    position: relative;
+    position: absolute;
+    top: 15%;
+    left: 5%;
     margin: auto;
     height: 30%;
     width: 30%;
