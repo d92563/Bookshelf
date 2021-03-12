@@ -75,9 +75,6 @@
     position: absolute;
     top: 15%;
     left: 5%;
-    margin: auto;
-    height: 30%;
-    width: 30%;
     min-width: 17em;
     display: flex;
     flex-direction: column;
